@@ -14,33 +14,58 @@ header {
     margin-bottom: 20px;
 }
 
-#menu a{
-    
-    color : white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-
-}
-
-#menu {
-    
-    background-color: #4CAF50;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 h2 {
     text-align: center;
     margin: 0;
     padding: 20px 0;
 }
 
+nav ul {
+    list-style: none;      /* Remove os bullets */
+    padding: 0;            /* Remove o recuo interno */
+    margin: 0;             /* Remove o espaço externo */
+    display: flex;         /* Opcional: alinha os itens em linha */
+    gap: 1rem;             /* Espaçamento entre os links */
+}
+
+nav a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit;        /* Herda a cor do elemento pai */
+}
+
+#menu{
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  
+}
+#menu a{
+  
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+}
+
+#menu a:hover {
+  background-color: #348438;
+}
+
+#loc{
+    display: flex;
+    margin-top: 30px;
+}
+#locTexto{
+    margin-top: 10%;
+    text-align: left;
+    
+}
+
 #mapa {
-    text-align: center;
+    
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: 50%;
+    border: 6px solid #4CAF50; 
+  border-radius: 20px; 
 }
 
 footer {
@@ -55,6 +80,7 @@ table {
             width: 60%;
             border-collapse: collapse;
             margin-top: 20px;
+            margin: auto;
         }
         th, td {
             border: 1px solid black;
@@ -62,21 +88,75 @@ table {
             text-align: center;
         }
         th {
-            background-color: rgb(255, 255, 255);
-            color:#3E3E42;
+            background-color: #4CAF50;
+            color:#ffffff;
 ;
         }
         td {
             color: #4CAF50;
         }
+
+#brutaFoto {
+    height: 100vh;
+    text-align: center;
+    height: 95vh;
+    margin-top: auto;
+    background-image: url('images/MegaLisboa.webp');
+    border: 6px solid #4CAF50; 
+    border-radius: 20px; 
+    background-size: cover;
+    background-position: center;
+}
+
+#brutaFoto h1 {
+    color: white;
+    margin-top: 250px;
+    border-radius: 10px;
+    background-color:#348438;
+    display: inline-flex;
+}
+
 .fotografias {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    height: 100vh;
 }
 .fotografias img {
     width: 150px;
     border-radius: 20px;
 }
+#video {
+    height: 100vh;
+}
+#video iframe {
+    display: block;
+    width: 90%;
+    height: 90%;
+    border: 6px solid #4CAF50;
+    border-radius: 20px;
+    margin: auto;
+    
+}
+#poema {
+    height: 100vh;
+    text-align: center;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    #loc {
+    flex-direction: column;
+    align-items: center;
+  }
+  #locTexto {
+    margin-top: 0;
+    text-align: center;
+  }
+  #mapa {
+    width: 100%;
+  }
+}
+
 
