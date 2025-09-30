@@ -40,7 +40,6 @@ nav a {
   
 }
 #menu a{
-  
   padding: 10px 20px;
   background-color: #4CAF50;
   border-radius: 5px;
@@ -96,35 +95,55 @@ table {
             color: #4CAF50;
         }
 
+#mediaMenu {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    color:white;
+}
+
+#mediaMenu a{
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+
+}
+
+#mediaMenu a:hover {
+    background-color: #348438;
+}
+
 #brutaFoto {
-    height: 100vh;
-    text-align: center;
-    height: 95vh;
-    margin-top: auto;
-    background-image: url('images/MegaLisboa.webp');
-    border: 6px solid #4CAF50; 
-    border-radius: 20px; 
-    background-size: cover;
-    background-position: center;
+    position:relative;
+    height: 130vh;
+    
 }
 
 #brutaFoto h1 {
+    position:absolute;
     color: white;
-    margin-top: 250px;
+    margin-top: 225px;
     border-radius: 10px;
-    background-color:#348438;
-    display: inline-flex;
+    display: flex;
+}
+
+#fotoMobile{
+    display:none;
 }
 
 .fotografias {
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    height: 100vh;
+    height: 110vh;
+    justify-content: center;
 }
 .fotografias img {
-    width: 150px;
+    width: 25%;
+    height: auto;
     border-radius: 20px;
 }
 #video {
@@ -157,6 +176,24 @@ table {
   #mapa {
     width: 100%;
   }
+
+  .fotografias{
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+    .fotografias img {
+    width: 90vw;      
+    max-width: 400px; 
+    height: auto;     
+    border-radius: 20px;
+    }
+
+    #fotoMobile{
+        display:block;
+    }
 }
 
 
