@@ -47,11 +47,12 @@ h2 {
 
 #menu a:hover {
   background-color: #348438;
+  
 }
 
 #hero {
   margin-top: 20px;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,6 +79,7 @@ h2 {
   max-height: 700px;
 }
 
+
 #lab a{
   
   padding: 10px 20px;
@@ -86,7 +88,7 @@ h2 {
 }
 
 #lab a:hover {
-  background-color: #348438;
+  background-color:#348438
 }
 
 #cidade {
@@ -100,7 +102,7 @@ section:nth-child(2) {
 }
 
 section:nth-child(3) {
-  height: 80vh;
+  height: 100vh;
 }
 
 footer {
