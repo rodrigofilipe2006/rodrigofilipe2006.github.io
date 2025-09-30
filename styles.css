@@ -13,6 +13,7 @@ header {
     color: white;
     margin-bottom: 20px;
 }
+
 nav ul {
     list-style: none;      /* Remove os bullets */
     padding: 0;            /* Remove o recuo interno */
@@ -32,41 +33,64 @@ h2 {
     padding: 20px 0;
 }
 
-footer {
-    text-align: center;
-    font-size: 0.8em;
-    color: white;
-    margin-top: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+#menu{
+  justify-content: center;
+  display: flex;
+  
+}
+#menu a{
+  
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
 }
 
-.hero {
+#menu a:hover {
+  background-color: #348438;
+}
+
+#hero {
+  margin-top: 20px;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90vh;
   background-image: url('images/minecraft.jpg');
   background-size: cover;
   background-position: center;
-  padding: 40px;
-  box-sizing: border-box;
 }
 
-.hero-text {
-  flex: 1;
+#hero-text {
   color: white;
-  margin-right: 40px;
+  text-align:left;
+  margin: 100px;
+  
 }
 
-.hero-img {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+#hero-img {
+  margin-left: 700px;
 }
 
-.hero-img img {
+#hero-img img {
   max-width: 500px;
   max-height: 700px;
+}
+
+#lab a{
+  
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+}
+
+#lab a:hover {
+  background-color: #348438;
+}
+
+#cidade {
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 section:nth-child(2) {
@@ -75,4 +99,44 @@ section:nth-child(2) {
 
 section:nth-child(3) {
   height: 80vh;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  #hero-text {
+    margin: 20px;
+  }
+
+  #hero-img {
+    margin: 20px;
+  }
+
+  #hero-img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #lab {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #cidade {
+    width: 100%;
+  }
 }
