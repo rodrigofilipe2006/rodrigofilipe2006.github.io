@@ -169,6 +169,12 @@ table {
     
 }
 
+#poema p:nth-child(odd) {
+    color: #4CAF50;
+    font-weight: bold;
+    
+}
+
 @media only screen and (max-width: 600px) {
     #loc {
     flex-direction: column;
