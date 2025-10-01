@@ -194,6 +194,11 @@ table {
     #fotoMobile{
         display:block;
     }
+
+    #mediaMenu {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 
