@@ -146,6 +146,11 @@ table {
     height: auto;
     border-radius: 20px;
 }
+
+.fotografias img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
 #video {
     height: 100vh;
 }
