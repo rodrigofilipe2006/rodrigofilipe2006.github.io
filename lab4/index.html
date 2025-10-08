@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Meu Primeiro Script</h1>
+    </header>
+
+    <div id="p1">
+        <p id= hover onmouseover="passaPorCima()" onmouseout="saiDeCima()" >1 - Passa por aqui</p>
+    </div>
+    
+    <div id="p2">
+        <p id="corButao">2 - Pinta-me</p>
+    <button onclick="mudarCor('red','1')">red</button>
+    <button onclick="mudarCor('green','1')">green</button>
+    <button onclick="mudarCor('blue','1')">blue</button>
+    </div>
+    
+    <div id="p3">
+        <p >3 - Experimenta escrever</p>
+    </div>
+    
+    <div id="p4">
+        <p id="corTexto">4 - Escolha uma cor em inglês</p>
+         <input type="text" id="textoCor">
+        <button onclick="mudarCor(document.getElementById('textoCor').value, 2)">submeter</button>
+    </div>
+    
+    <div id="p5">
+        <p>5 - </p>
+        <p id="numeroCount">0</p>
+        <button onclick="contadeiro()">Conta</button>
+    </div>
+    
+    <script src="Scripts/main.js"></script>
+</body>
+</html>
