@@ -14,12 +14,12 @@ const butaoBlue = buttons[2];
 
 
 //4
-const textoFundo = document.querySelector('#corFundo input')
-const botaoFundo = document.querySelector('#corFundo button')
+const textoFundo = document.querySelector('#corFundo input');
+const botaoFundo = document.querySelector('#corFundo button');
 
 //5
-const botaoConta = document.querySelector('#conta button')
-const numeroConta = document.querySelector('#conta p:last-child')
+const botaoConta = document.querySelector('#conta button');
+const numeroConta = document.querySelector('#conta p:last-child');
 
 //6
 
