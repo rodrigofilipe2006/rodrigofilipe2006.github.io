@@ -22,13 +22,13 @@ const botaoConta = document.querySelector('#conta button');
 const numeroConta = document.querySelector('#conta p:last-child');
 
 //6
-const inputNome = document.querySelector('#nomeIdade input:first-child')
-const inputIdade = document.querySelector('#nomeIdade input:last-child')
-const botaoForm = document.querySelector('#nomeIdade button')
-const userPrint = document.querySelector('#nomeIdade p:last-child')
+const inputNome = document.querySelector('#nomeIdade form input:first-of-type')
+const inputIdade = document.querySelector('#nomeIdade form input:last-of-type')
+const botaoForm = document.querySelector('#nomeIdade form button')
+const userPrint = document.querySelector('#nomeIdade form p:last-of-type')
 
 //7
-
+const autoCounterText = document.querySelector('#autoCounter p:last-child')
 
 
 //funções
@@ -72,10 +72,13 @@ contador = () => {
 
 //6
 idadeNome = (nome , idade) => {
-    userPrint.innerHTML = 'Olá, o ' + nome + ' tem ' + idade
+    userPrint.innerHTML = `Olá, o ${nome} tem ${idade} anos`
 }
 
 //7
+autocount = () => {
+
+}
 
 
 
@@ -100,7 +103,7 @@ botaoFundo.onclick = () => mudaCorFundo(textoFundo.value);
 botaoConta.onclick = () => contador();
 
 //6
-botaoForm.onclick = () => idadeNome(inputNome , inputIdade)
+botaoForm.onclick = () => idadeNome(inputNome.value , inputIdade.value)
 
 //7
 
