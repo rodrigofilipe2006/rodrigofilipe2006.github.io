@@ -56,6 +56,9 @@ caixaRGB = () => {
     blueRandom = Math.floor(Math.random() * 256);
 
     colorInput.style.backgroundColor = `rgb(${redRandom},${greenRandom},${blueRandom})`
+
+    //para atacar epileticos
+    //document.body.style.backgroundColor = `rgb(${redRandom},${greenRandom},${blueRandom})`
 }
 
 //4
@@ -65,9 +68,16 @@ mudaCorFundo = (cor) => {
 }
 
 //5
-contador = () => {
+if(!localStorage.getItem('contador')){
+    localStorage.setItem('contador',0);
+}
 
-    numeroConta.innerHTML  = parseInt(numeroConta.innerHTML) + 1
+contador = () => {
+    let counter = localStorage.getItem('contador')
+    counter ++
+
+    numeroConta.innerHTML  = counter
+    localStorage.setItem('contador',counter)
 }
 
 //6
@@ -76,9 +86,20 @@ idadeNome = (nome , idade) => {
 }
 
 //7
-autocount = () => {
+if(!localStorage.getItem('autoCounter')){
+    localStorage.setItem('autoCounter',0);
+}
+
+autoCount = () => {
+    let counter = localStorage.getItem('autoCounter')
+    counter ++
+
+    autoCounterText.textContent = counter;
+    localStorage.setItem('autoCounter',counter)
 
 }
+
+setInterval(autoCount, 1000);
 
 
 
@@ -100,10 +121,12 @@ colorInput.onkeydown = () => caixaRGB()
 botaoFundo.onclick = () => mudaCorFundo(textoFundo.value);
 
 //5
+numeroConta.textContent = localStorage.getItem('contador');
 botaoConta.onclick = () => contador();
 
 //6
 botaoForm.onclick = () => idadeNome(inputNome.value , inputIdade.value)
 
 //7
-
+autoCounterText.textContent = localStorage.getItem('autoCounter');
+onload = () => autoCount();
