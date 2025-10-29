@@ -37,10 +37,74 @@ nav a {
     border-radius: 5px;
 }
 
-#produtos {
+#intro h1 {
+    background-color: #4CAF50;
+    text-align: center;
+}
+
+#intro img {
+    display: block;
+    margin: 0.5rem auto;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#artigos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* duas colunas */
+    gap: 1rem; /* espaçamento entre items */
+    align-items: start;
+}
+
+#produtos h1 {
+    background-color: #4CAF50;
+    
+}
+
+#produtos article {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #2E2E30;
+    text-align: center;
+}
+
+#artigos article img {
+    display: block;
+    margin: 0.5rem auto;
+    width: 300px;
+    height: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* garante que o h2 está centrado */
+#artigos article h2 {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+#artigos button{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#cesto h1{
     background-color: #4CAF50;
 }
 
-#cesto{
-    background-color: #4CAF50;
+@media (max-width: 600px) {
+    #artigos article img,
+    #produtos article img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
