@@ -84,6 +84,12 @@ nav a {
 #artigos article h2 {
     margin: 0.5rem 0;
     text-align: center;
+    
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 #artigos button{
@@ -94,6 +100,10 @@ nav a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+}
+
+#artigos button:hover {
+    background-color: #2a562c;
 }
 
 #cesto h1{
