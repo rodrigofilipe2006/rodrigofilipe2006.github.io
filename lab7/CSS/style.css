@@ -110,6 +110,38 @@ nav a {
     background-color: #4CAF50;
 }
 
+#pagamento > *:not(form) {
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+#cesto form{
+    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+#cesto button{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+
+}
+#cesto button:hover {
+    background-color: #2a562c;
+}
+
+
 @media (max-width: 600px) {
     #artigos article img,
     #produtos article img {

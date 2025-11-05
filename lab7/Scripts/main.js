@@ -3,10 +3,10 @@ const apiUrl = 'https://deisishop.pythonanywhere.com/products';
 
 const produtos = [];
 
-let produtosSelecionados = [];
+let produtosSelecionados = new Array(60)
 
 if(!localStorage.getItem('produtos-selecionados')){
-    localStorage.setItem('produtos-selecionados',[]);
+    localStorage.setItem('produtos-selecionados',produtosSelecionados);
 }else{
     produtosSelecionados = localStorage.getItem('produtos-selecionados');
 }
@@ -53,6 +53,7 @@ const criarProduto = (produto) => {
     comprarButton.textContent = 'Comprar';
 
     comprarButton.onclick = () => {
+        criaProdutoCesto(produto)
         produtosSelecionados.push(...produto);
         localStorage.setItem('produtos-selecionados', produtosSelecionados);
     }
@@ -81,6 +82,11 @@ const carregarProdutos = async () => {
         Descrição: ${produto.description}`);
   });
 };
+
+const criaProdutoCesto = (produto) => {
+    
+}
+
 
 
 
