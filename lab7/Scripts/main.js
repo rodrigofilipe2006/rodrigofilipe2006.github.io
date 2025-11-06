@@ -113,6 +113,7 @@ const renderCesto = () => {
   }
   cestoContainer.innerHTML = '';
   produtosSelecionados.forEach(produto => {
+    document.querySelector('#precoTotal').innerHTML += produto.price
     const article = document.createElement('article');
     article.className = 'produto';
     article.dataset.id = produto.id;
