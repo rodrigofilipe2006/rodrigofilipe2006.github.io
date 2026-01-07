@@ -1,6 +1,7 @@
 //Variaveis
 const apiUrl = 'https://deisishop.pythonanywhere.com/products';
 
+const apiCategoriesUrl = 'https://deisishop.pythonanywhere.com/categories';
 const produtos = [];
 
 const loadSelecionados = () => {
@@ -19,8 +20,7 @@ const saveSelecionados = (arr) => {
 
 let produtosSelecionados = loadSelecionados();
 
-
-
+const select = document.getElementById("filtro");
 
 
 //Funções
@@ -31,7 +31,6 @@ fetch(apiUrl)
     produtos.length = 0;  
     produtos.push(...data);
 })
-
 
 
 async function fetchProdutos() {
@@ -75,6 +74,25 @@ const criarProduto = (produto) => {
 }
 
 const carregarProdutos = async () => {
+  
+  const response = await fetch(apiCategoriesUrl);
+  const categorias = await response.json();
+
+  //const categorias = ["T-shirts","Canecas","Meias"]
+
+  const select = document.getElementById("filtro");
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "todo";
+  defaultOption.textContent = "Tudo"
+  select.appendChild(defaultOption);
+
+  categorias.forEach(cat => {
+      const option = document.createElement("option");
+      option.value = cat
+      option.textContent = cat
+      select.appendChild(option);
+  });
+
   const container = document.getElementById('artigos')
 
   const data = await fetchProdutos();
@@ -147,6 +165,22 @@ const renderCesto = () => {
   });
 };
 
+const filtrar = (categoria) => {
+  const container = document.getElementById('artigos');
+  container.innerHTML = '';
+
+  produtos.forEach(produto => {
+    if(produto.category == categoria && categoria != 'todo'){
+    const el = criarProduto(produto);
+    container.appendChild(el);
+    console.log(`Id: ${produto.id} | Titulo: ${produto.title} | Preço: ${produto.price}
+        Descrição: ${produto.description}`);
+    }
+  });
+}
+
+  
+
 
 
 
@@ -155,3 +189,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   await carregarProdutos();
   renderCesto();
 });
+
+
+select.addEventListener('change', (e) => {
+  const valor = e.target.value;
+  if (typeof filtrarProdutos === 'function') {
+    filtrarProdutos(valor);
+  } else {
+    console.log('filtrarProdutos não definida. Valor selecionado:', valor);
+  }
+});
+

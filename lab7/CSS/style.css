@@ -20,16 +20,16 @@ header h1 {
 
 nav ul {
     justify-content: center;
-    list-style: none;      
-    padding: 0;            
-    margin: 0;             
-    display: flex;         
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
     gap: 1rem;
 }
 
 nav a {
-    
-    text-decoration: none; 
+
+    text-decoration: none;
     color: inherit;
 
     padding: 5px 10px;
@@ -52,14 +52,16 @@ nav a {
 
 #artigos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* duas colunas */
-    gap: 1rem; /* espaçamento entre items */
+    grid-template-columns: repeat(2, 1fr);
+    /* duas colunas */
+    gap: 1rem;
+    /* espaçamento entre items */
     align-items: start;
 }
 
 #produtos h1 {
     background-color: #4CAF50;
-    
+
 }
 
 #produtos article {
@@ -84,7 +86,7 @@ nav a {
 #artigos article h2 {
     margin: 0.5rem 0;
     text-align: center;
-    
+
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -92,7 +94,7 @@ nav a {
     border-radius: 5px;
 }
 
-#artigos button{
+#artigos button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -106,27 +108,27 @@ nav a {
     background-color: #2a562c;
 }
 
-#cesto h1{
+#cesto h1 {
     background-color: #4CAF50;
 }
 
-#pagamento > *:not(form) {
+#pagamento>*:not(form) {
     display: inline-block;
     vertical-align: middle;
-    
+
 }
 
-#cesto form{
-    
+#cesto form {
+
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;
-    
+
 }
 
-#cesto button{
+#cesto button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -137,16 +139,19 @@ nav a {
     margin-left: 10px;
 
 }
+
 #cesto button:hover {
     background-color: #2a562c;
 }
 
 
 @media (max-width: 600px) {
+
     #artigos article img,
     #produtos article img {
         width: 100%;
         height: auto;
         object-fit: contain;
     }
+}
 }
