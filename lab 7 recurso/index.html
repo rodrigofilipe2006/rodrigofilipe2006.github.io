@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roupa de Cromo</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Roupa de Cromo</h1>
+    <nav>
+      <ul>
+        <li><a href="#intro">Introdução</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <h1>Bem-vindo</h1>
+    <p>Se para ti tocar na relva é apenas uma lenda, vives na cave da tua avó e sempre que vês uma mulher começas a
+      falar como a Joacine Katar Moreira?</p>
+    <img src="Images/nerd.jpg" alt="Average informatica student">
+    <p>Bem meu caro toda a roupa e acessórios que vais precisar para a tua vida estão aqui!!</p>
+  </section>
+
+  <section id="produtos">
+    <h1>Produtos</h1>
+
+    <div class="filtros">
+      <div class="filtro-categorias">
+        <div class="custom-select" id="custom-categorias">
+          <div class="select-selected">Todas as categorias</div>
+          <div class="select-items select-hide">
+            <!-- Checkboxes geradas dinamicamente pelo JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="filtro-ordenacao">
+        <select id="ordenacao">
+          <option value="nenhum">Sem ordenação</option>
+          <option value="preco-asc">Preço ↑ (mais barato primeiro)</option>
+          <option value="preco-desc">Preço ↓ (mais caro primeiro)</option>
+          <option value="nome-asc">Nome A → Z</option>
+          <option value="nome-desc">Nome Z → A</option>
+          <option value="rating-asc">Rating ↑ (pior primeiro)</option>
+          <option value="rating-desc">Rating ↓ (melhor primeiro)</option>
+        </select>
+      </div>
+
+      <div class="filtro-pesquisa">
+        <input type="text" id="pesquisa" placeholder="Pesquisar por nome...">
+      </div>
+    </div>
+
+    <ul id="artigos"></ul>
+  </section>
+
+  <section id="cesto">
+    <h1>Cesto 🛒</h1>
+
+    <div id="pagamento">
+    <label>Nome para a compra</label>
+    <input type="text" id="nome-comprador" placeholder="O teu nome" required>
+
+    <label>És estudante DEISI?</label>
+    <input type="checkbox" id="estudante">
+
+    <label>Cupão de desconto</label>
+    <input type="text" id="cupao" placeholder="ex: DEISI2025">
+
+    <button id="btn-comprar">Comprar</button>
+
+    <p>Total: <span id="precoTotal">0.00</span> €</p>
+    <p id="mensagem-compra"></p>
+</div>
+
+    <div class="cesto-controles">
+      <button id="limpar-cesto">Limpar Cesto</button>
+      <button id="remover-duplicados">Remover Duplicados</button>
+    </div>
+
+    <ul id="cestoArtigos"></ul>
+  </section>
+
+  <script type="module" src="Scripts/main.js"></script>
+</body>
+
+</html>

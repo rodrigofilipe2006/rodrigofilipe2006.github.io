@@ -1,0 +1,406 @@
+/* Reset básico e estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #3E3E42;
+    color: white;
+    margin: 20px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    background-color: #4CAF50;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #4CAF50;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #388E3C;
+}
+
+/* Introdução */
+#intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#intro h1 {
+    background-color: #4CAF50;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#intro img {
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Produtos */
+#produtos h1 {
+    background-color: #4CAF50;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Filtros – em linha horizontal, cada um em div separada */
+.filtros {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Cada filtro em div separada */
+.filtro-categorias,
+.filtro-ordenacao,
+.filtro-pesquisa {
+    min-width: 220px;
+}
+
+/* Custom multi-select para categorias */
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select .select-selected {
+    background-color: #2E2E30;
+    padding: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #555;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-select .select-selected::after {
+    content: "▼";
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+
+.custom-select .select-items {
+    position: absolute;
+    background-color: #2E2E30;
+    border: 1px solid #555;
+    border-radius: 6px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+}
+
+.select-hide {
+    display: none;
+}
+
+.custom-select .select-items label {
+    display: block;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.custom-select .select-items label:hover {
+    background-color: #4CAF50;
+}
+
+.custom-select .select-items input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+/* Estilo uniforme para ordenação e pesquisa */
+.filtro-ordenacao select,
+.filtro-pesquisa input {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #2E2E30;
+    color: white;
+}
+
+/* Grid idêntico para produtos e cesto */
+#artigos,
+#cestoArtigos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* Cards (produtos e cesto) */
+#artigos article,
+#cestoArtigos article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #2E2E30;
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid #555;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#artigos article:hover,
+#cestoArtigos article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Imagem */
+#artigos article img,
+#cestoArtigos article img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: #222;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Conteúdo flexível */
+#artigos article > *:not(button),
+#cestoArtigos article > *:not(button) {
+    flex: 1 1 auto;
+}
+
+/* Títulos */
+#artigos article h2,
+#cestoArtigos article h2 {
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4CAF50;
+    padding: 0.7rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+}
+
+/* Descrição */
+#artigos article p:not(:last-of-type),
+#cestoArtigos article p:not(:last-of-type) {
+    max-height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+/* Preço */
+#artigos article p strong,
+#cestoArtigos article p strong {
+    color: #4CAF50;
+    font-size: 1.1rem;
+}
+
+/* Botões nos cards */
+#artigos article button,
+#cestoArtigos article button {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#artigos article button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#artigos article button:hover {
+    background-color: #388E3C;
+}
+
+#cestoArtigos article button {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#cestoArtigos article button:hover {
+    background-color: #b71c1c;
+}
+
+/* Cesto */
+#cesto h1 {
+    background-color: #4CAF50;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#pagamento {
+    background-color: #2E2E30;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagamento label {
+    margin-right: 0.5rem;
+}
+
+#pagamento input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 1rem;
+}
+
+#pagamento input[type="text"] {
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #3E3E42;
+    color: white;
+}
+
+#pagamento button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+#pagamento button:hover {
+    background-color: #388E3C;
+}
+
+#precoTotal {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#mensagem-compra {
+    min-height: 1.4rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* Controles do cesto */
+.cesto-controles {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.cesto-controles button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cesto-controles button:hover {
+    background-color: #b71c1c;
+}
+
+#remover-duplicados {
+    background-color: #FF9800;
+}
+
+#remover-duplicados:hover {
+    background-color: #F57C00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtro-categorias,
+    .filtro-ordenacao,
+    .filtro-pesquisa {
+        min-width: auto;
+    }
+
+    #pagamento {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #pagamento > * {
+        margin: 0.6rem 0;
+    }
+
+    #artigos article img,
+    #cestoArtigos article img {
+        height: 180px;
+    }
+}

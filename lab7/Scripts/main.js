@@ -25,56 +25,56 @@ const select = document.getElementById("filtro");
 
 //Funções
 fetch(apiUrl)
-.then (response => response.json())
-.then (data => {
+  .then(response => response.json())
+  .then(data => {
     console.log(data);
-    produtos.length = 0;  
+    produtos.length = 0;
     produtos.push(...data);
-})
+  })
 
 
 async function fetchProdutos() {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    return data;
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data;
 }
 const criarProduto = (produto) => {
-    const article = document.createElement('article');
-    article.className = 'produto';
-    article.dataset.id = produto.id;
-
-    
-    const h2 = document.createElement('h2');
-    h2.textContent = produto.title;
-
-    const img = document.createElement('img');
-    img.src = produto.image
-    img.alt = produto.title 
-    
-    const desc = document.createElement('p');
-    desc.textContent = produto.description;
-    const precoErating = document.createElement('p');
-    precoErating.textContent = `Preço: ${produto.price}€ | Rating: ${produto.rating.rate} (${produto.rating.count} avaliações)`;
-
-     const comprarButton = document.createElement('button');
-    comprarButton.textContent = 'Comprar';
-    comprarButton.addEventListener('click', () => {
-        addToCesto(produto);
-    });
+  const article = document.createElement('article');
+  article.className = 'produto';
+  article.dataset.id = produto.id;
 
 
-    article.appendChild(h2);
-    article.appendChild(img);
-    article.appendChild(desc);
-    article.appendChild(precoErating);
-    article.appendChild(comprarButton);
-    
+  const h2 = document.createElement('h2');
+  h2.textContent = produto.title;
 
-    return article;
+  const img = document.createElement('img');
+  img.src = produto.image
+  img.alt = produto.title
+
+  const desc = document.createElement('p');
+  desc.textContent = produto.description;
+  const precoErating = document.createElement('p');
+  precoErating.textContent = `Preço: ${produto.price}€ | Rating: ${produto.rating.rate} (${produto.rating.count} avaliações)`;
+
+  const comprarButton = document.createElement('button');
+  comprarButton.textContent = 'Comprar';
+  comprarButton.addEventListener('click', () => {
+    addToCesto(produto);
+  });
+
+
+  article.appendChild(h2);
+  article.appendChild(img);
+  article.appendChild(desc);
+  article.appendChild(precoErating);
+  article.appendChild(comprarButton);
+
+
+  return article;
 }
 
 const carregarProdutos = async () => {
-  
+
   const response = await fetch(apiCategoriesUrl);
   const categorias = await response.json();
 
@@ -87,10 +87,10 @@ const carregarProdutos = async () => {
   select.appendChild(defaultOption);
 
   categorias.forEach(cat => {
-      const option = document.createElement("option");
-      option.value = cat
-      option.textContent = cat
-      select.appendChild(option);
+    const option = document.createElement("option");
+    option.value = cat
+    option.textContent = cat
+    select.appendChild(option);
   });
 
   const container = document.getElementById('artigos')
@@ -103,7 +103,7 @@ const carregarProdutos = async () => {
     const el = criarProduto(produto);
     container.appendChild(el);
     console.log(`Id: ${produto.id} | Titulo: ${produto.title} | Preço: ${produto.price}
-        Descrição: ${produto.description}`);
+                                                                                                                                                                                                                                             Descrição: ${produto.description}`);
   });
 };
 
@@ -170,16 +170,16 @@ const filtrar = (categoria) => {
   container.innerHTML = '';
 
   produtos.forEach(produto => {
-    if(produto.category == categoria && categoria != 'todo'){
-    const el = criarProduto(produto);
-    container.appendChild(el);
-    console.log(`Id: ${produto.id} | Titulo: ${produto.title} | Preço: ${produto.price}
-        Descrição: ${produto.description}`);
+    if (produto.category == categoria && categoria != 'todo') {
+      const el = criarProduto(produto);
+      container.appendChild(el);
+      console.log(`Id: ${produto.id} | Titulo: ${produto.title} | Preço: ${produto.price}
+                                                                                                                                                                                                                                                                                                                                                                                                                           Descrição: ${produto.description}`);
     }
   });
 }
 
-  
+
 
 
 
