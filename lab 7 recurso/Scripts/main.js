@@ -184,10 +184,10 @@ async function inicializar() {
             const label = document.createElement('label');
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.value = cat;
+            checkbox.value = cat.name;
             checkbox.checked = true;
             label.appendChild(checkbox);
-            label.appendChild(document.createTextNode(' ' + cat));
+            label.appendChild(document.createTextNode(' ' + cat.name));
             selectItems.appendChild(label);
         });
 
