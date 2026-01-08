@@ -11,7 +11,7 @@ body {
     color: white;
     margin: 20px;
     line-height: 1.5;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Cabeçalho */
@@ -66,7 +66,7 @@ nav a:hover {
     border-radius: 12px;
     margin: 1.5rem auto;
     display: block;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* Produtos */
@@ -194,7 +194,7 @@ nav a:hover {
 #artigos article:hover,
 #cestoArtigos article:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Imagem */
@@ -209,8 +209,8 @@ nav a:hover {
 }
 
 /* Conteúdo flexível */
-#artigos article > *:not(button),
-#cestoArtigos article > *:not(button) {
+#artigos article>*:not(button),
+#cestoArtigos article>*:not(button) {
     flex: 1 1 auto;
 }
 
@@ -395,7 +395,7 @@ nav a:hover {
         align-items: stretch;
     }
 
-    #pagamento > * {
+    #pagamento>* {
         margin: 0.6rem 0;
     }
 
